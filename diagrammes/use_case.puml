@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+
+"Personne" as Personne
+"Elève" as Eleve
+"Intervenant" as Intervenant
+
+Personne <|-- Eleve
+Personne <|-- Intervenant
+
+"Evaluer une séance" as (EvaluerSeance)
+"Renseigner matière" as (RenseignerMatiere)
+"Renseigner description" as (RenseignerDescription)
+"Créer une demande de soutien" as (CreerDemandeSoutien)
+"Consulter l'historique des séances" as (ConsulterHistoriqueSeances)
+Eleve --> (EvaluerSeance)
+Eleve --> (RenseignerMatiere)
+Eleve --> (RenseignerDescription)
+Eleve --> (CreerDemandeSoutien)
+Eleve --> (ConsulterHistoriqueSeances)
+
+"Créer un compte" as (CreerCompte)
+"Se connecter" as (Connecter)
+"Participer a une visio" as (ParticiperVisio)
+"Quitter la visio" as (QuitterVisio)
+Personne --> (CreerCompte)
+Personne --> (ParticiperVisio)
+Personne --> (QuitterVisio)
+Personne --> (Connecter)
+
+"Consulter la demande d'intervention en cours" as (ConsulterDemandeIntervention)
+"Consulter profil élève" as (ConsulterProfilEleve)
+"Rediger bilan" as (RedigerBilan)
+"Consulter le tableu de bord des demandes" as (ConsulterTableauBord)
+"Consulter les interventions" as (ConsulterInterventions)
+Intervenant --> (RedigerBilan)
+Intervenant --> (ConsulterTableauBord)
+Intervenant --> (ConsulterInterventions)
+Intervenant --> (ConsulterDemandeIntervention)
+Intervenant --> (ConsulterProfilEleve)
+
+@enduml
